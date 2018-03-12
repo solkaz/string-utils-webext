@@ -1,0 +1,19 @@
+{
+	"author": "Jeff Held",
+	"description": "Modify selected text from the context-menu",
+	"homepage_url": "https://github.com/solkaz/string-utils",
+	"manifest_version": 2,
+	"version": "0.0.0",
+	"name": "String Utils",
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["dist/content_scripts/index.js"]
+    }
+  ],
+	"permissions": [
+    "*://*/*",
+    "clipboardWrite",
+    "contextMenus"
+	]
+}

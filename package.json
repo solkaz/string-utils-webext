@@ -1,0 +1,23 @@
+{
+  "name": "string-utils",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Jeffrey Held <jheld135@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "web-ext run",
+    "start:fde": "yarn run start --firefox=firefoxdeveloperedition",
+    "build": "yarn run rollup -c",
+    "build:watch": "yarn build -w"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "rollup": "^0.56.5",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "web-ext": "^2.4.0"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.7"
+  }
+}
