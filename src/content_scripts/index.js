@@ -4,22 +4,42 @@ import kebabCase from 'lodash-es/kebabCase';
 import lowerCase from 'lodash-es/lowerCase';
 import snakeCase from 'lodash-es/snakeCase';
 import upperCase from 'lodash-es/upperCase';
+import zip from 'lodash-es/zip';
 
-const getSelectedText = () => {
-    let text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    return text;
-}
+const OPERATION_NAMES = [
+  'camelCase',
+  'capitalize',
+  'kebabCase',
+  'lowerCase',
+  'snakeCase',
+  'upperCase',
+];
 
-window.oncontextmenu = () => {
-	const selectedText = getSelectedText();
-	if (selectedText) {
-		console.log('selectedText:', selectedText);
-	} else {
-		console.log('No text selected');
-	}
-}
+const OPERATIONS = [
+  camelCase,
+  capitalize,
+  kebabCase,
+  lowerCase,
+  snakeCase,
+  upperCase,
+];
+
+const OPERATION_MAP = new Map(zip(OPERATION_NAMES, OPERATIONS))
+
+const createContextMenuItem = operation => ({
+  id: operation,
+  title: operation,
+  contexts: ['selection'],
+});
+
+OPERATION_NAMES.forEach((name) => {
+	chrome.contextMenus.create(createContextMenuItem(name));
+})
+
+chrome.contextMenus.onClicked.addListener(
+	({ menuItemId, selectionText }) => {
+		const operation = OPERATION_MAP.get(menuItemId);
+		const textToSendToClipboard = operation(selectionText);
+		console.log('textToSendToClipboard', textToSendToClipboard);
+  }
+);

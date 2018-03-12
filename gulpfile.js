@@ -15,7 +15,8 @@ gulp.task('watch:content_scripts', async () => {
     output: [
       {
         file: './dist/content_scripts/index.js',
-        format: 'iife',
+	      format: 'iife',
+	      strict: false
       },
     ],
     watch: {
@@ -42,6 +43,7 @@ gulp.task('build:content_scripts', async () => {
   await bundle.write({
     file: './dist/content_scripts/index.js',
     format: 'iife',
+	  strict: false
   });
 });
 
