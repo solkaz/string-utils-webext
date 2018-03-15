@@ -3,16 +3,18 @@ import capitalize from 'lodash-es/capitalize';
 import kebabCase from 'lodash-es/kebabCase';
 import lowerCase from 'lodash-es/lowerCase';
 import snakeCase from 'lodash-es/snakeCase';
+import trim from 'lodash-es/trim';
 import upperCase from 'lodash-es/upperCase';
 import zip from 'lodash-es/zip';
 
 const OPERATION_NAMES = [
-  'camelCase',
-  'capitalize',
-  'kebabCase',
-  'lowerCase',
-  'snakeCase',
-  'upperCase',
+  'Camel Case',
+  'Capitalize',
+  'Kebab Case',
+  'Lower Case',
+	'Snake Case',
+	'Trim',
+  'Upper Case',
 ];
 
 const OPERATIONS = [
@@ -20,8 +22,9 @@ const OPERATIONS = [
   capitalize,
   kebabCase,
   lowerCase,
-  snakeCase,
-  upperCase,
+	snakeCase,
+	trim,
+  upperCase
 ];
 
 const OPERATION_MAP = new Map(zip(OPERATION_NAMES, OPERATIONS))
