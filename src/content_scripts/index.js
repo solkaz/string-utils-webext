@@ -19,6 +19,6 @@ const copyToClipboard = (text) => {
     }
 }
 
-chrome.runtime.onMessage.addListener(({ textToSendToClipboard }) => {
+browser.runtime.onMessage.addListener(({ textToSendToClipboard }) => {
 	copyToClipboard(textToSendToClipboard);
 })

@@ -35,18 +35,17 @@ const createContextMenuItem = operation => ({
   contexts: ['selection'],
 });
 
-chrome.contextMenus.removeAll();
+browser.contextMenus.removeAll();
 
 OPERATION_NAMES.forEach((name) => {
-	chrome.contextMenus.create(createContextMenuItem(name));
+	browser.contextMenus.create(createContextMenuItem(name));
 })
 
-chrome.contextMenus.onClicked.addListener(
+browser.contextMenus.onClicked.addListener(
 	({ menuItemId, selectionText }, { id }) => {
 		const operation = OPERATION_MAP.get(menuItemId);
 		const textToSendToClipboard = operation(selectionText);
-		console.log(textToSendToClipboard);
 		
-		chrome.tabs.sendMessage(id, { textToSendToClipboard });
+		browser.tabs.sendMessage(id, { textToSendToClipboard });
   }
 );
