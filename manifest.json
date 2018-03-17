@@ -1,22 +1,22 @@
 {
 	"author": "Jeff Held",
 	"description": "Modify selected text from the context-menu",
-	"homepage_url": "https://github.com/solkaz/string-utils",
+	"homepage_url": "https://github.com/solkaz/string-utils-webext",
 	"manifest_version": 2,
 	"version": "0.0.0",
 	"name": "String Utils",
   "background": {
       "scripts": [
-          "dist/shared/browser-polyfill.js",
-          "dist/background/index.js"
+          "shared/browser-polyfill.js",
+          "background/index.js"
       ]
   },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
       "js": [
-          "dist/shared/browser-polyfill.js",
-          "dist/content_scripts/index.js"
+          "shared/browser-polyfill.js",
+          "content_scripts/index.js"
       ]
     }
   ],

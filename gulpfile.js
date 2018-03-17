@@ -7,6 +7,12 @@ const ROLLUP_PLUGINS = [resolve(), commonjs()];
 
 gulp.task('default', () => {});
 
+gulp.task('copy-manifest', async () => {
+	gulp.src(['./manifest.json'])
+		.pipe(gulp.dest('./dist'));
+});
+
+
 gulp.task('copy-webextension-polyfill', async () => {
 	gulp.src([
 		'./node_modules/webextension-polyfill/dist/browser-polyfill.js',
@@ -70,7 +76,7 @@ gulp.task('watch:background', async () => {
   });
 });
 
-gulp.task('watch', ['copy-webextension-polyfill', 'watch:background', 'watch:content_scripts']);
+gulp.task('watch', ['copy-manifest', 'copy-webextension-polyfill', 'watch:background', 'watch:content_scripts']);
 
 gulp.task('build:background', async () => {
   console.log('building background');
@@ -99,4 +105,4 @@ gulp.task('build:content_scripts', async () => {
   });
 });
 
-gulp.task('build:all', ['copy-webextension-polyfill-min', 'build:background', 'build:content_scripts']);
+gulp.task('build:all', ['copy-manifest', 'copy-webextension-polyfill-min', 'build:background', 'build:content_scripts']);
