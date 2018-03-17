@@ -6,12 +6,18 @@
 	"version": "0.0.0",
 	"name": "String Utils",
   "background": {
-    "scripts": ["dist/background/index.js"]
+      "scripts": [
+          "dist/shared/browser-polyfill.js",
+          "dist/background/index.js"
+      ]
   },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["dist/content_scripts/index.js"]
+      "js": [
+          "dist/shared/browser-polyfill.js",
+          "dist/content_scripts/index.js"
+      ]
     }
   ],
 	"permissions": [
