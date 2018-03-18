@@ -5,6 +5,7 @@ import lowerCase from 'lodash-es/lowerCase';
 import snakeCase from 'lodash-es/snakeCase';
 import trim from 'lodash-es/trim';
 import upperCase from 'lodash-es/upperCase';
+import words from 'lodash-es/words';
 import zip from 'lodash-es/zip';
 
 const OPERATION_NAMES = [
@@ -14,7 +15,8 @@ const OPERATION_NAMES = [
   'Lower Case',
 	'Snake Case',
 	'Trim',
-  'Upper Case',
+	'Upper Case',
+	'Word Count'
 ];
 
 const OPERATIONS = [
@@ -24,7 +26,8 @@ const OPERATIONS = [
   lowerCase,
 	snakeCase,
 	trim,
-  upperCase
+	upperCase,
+	(s) => words(s).length
 ];
 
 const OPERATION_MAP = new Map(zip(OPERATION_NAMES, OPERATIONS))
