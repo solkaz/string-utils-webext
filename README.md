@@ -14,6 +14,7 @@ Available on other browsers soon.
 - [Kebab case](https://lodash.com/docs/4.17.5#kebabCase)
 - [Lower case](https://lodash.com/docs/4.17.5#lowerCase)
 - [Snake case](https://lodash.com/docs/4.17.5#snakeCase)
+- [Start case](https://lodash.com/docs/4.17.5#startCase)
 - [Trim](https://lodash.com/docs/4.17.5#trim)
 - [Upper case](https://lodash.com/docs/4.17.5#upperCase)
 - Word Count

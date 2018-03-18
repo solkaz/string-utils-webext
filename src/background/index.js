@@ -3,6 +3,7 @@ import capitalize from 'lodash-es/capitalize';
 import kebabCase from 'lodash-es/kebabCase';
 import lowerCase from 'lodash-es/lowerCase';
 import snakeCase from 'lodash-es/snakeCase';
+import startCase from 'lodash-es/startCase';
 import trim from 'lodash-es/trim';
 import upperCase from 'lodash-es/upperCase';
 import words from 'lodash-es/words';
@@ -14,6 +15,7 @@ const OPERATION_NAMES = [
   'Kebab Case',
   'Lower Case',
 	'Snake Case',
+	'Start Case',
 	'Trim',
 	'Upper Case',
 	'Word Count'
@@ -25,6 +27,7 @@ const OPERATIONS = [
   kebabCase,
   lowerCase,
 	snakeCase,
+	startCase,
 	trim,
 	upperCase,
 	(s) => words(s).length
