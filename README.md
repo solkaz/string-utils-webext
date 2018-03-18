@@ -9,7 +9,6 @@
 Available on other browsers soon.
 
 ## Available Functions
-All functions are provided through [lodash](https://lodash.com/docs)
 - [Camel case](https://lodash.com/docs/4.17.5#camelCase)
 - [Capitalize](https://lodash.com/docs/4.17.5#capitalize)
 - [Kebab case](https://lodash.com/docs/4.17.5#kebabCase)
@@ -17,6 +16,7 @@ All functions are provided through [lodash](https://lodash.com/docs)
 - [Snake case](https://lodash.com/docs/4.17.5#snakeCase)
 - [Trim](https://lodash.com/docs/4.17.5#trim)
 - [Upper case](https://lodash.com/docs/4.17.5#upperCase)
+- Word Count
 
 ## License
 
